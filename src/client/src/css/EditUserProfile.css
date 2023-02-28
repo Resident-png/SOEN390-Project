@@ -1,14 +1,39 @@
 .EditUserProfileContainer {
-  /* display: flex;
-  justify-content: center; */
+  display: flex;
+  justify-content: center;
 
 }
+
+.edit-right-side,
+.edit-left-side {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+/* .edit-right-side .button-field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} */
 
 .EditUserForm-Container {
   margin: 50px;
   display: flex;
-  justify-content: space-evenly;
-  flex-direction: row
+  justify-content: space-around  ;
+  flex-direction: row;
+}
+
+.EditUserForm-Container #editField{
+  background-color: white;
+  border-radius: 10px;
+}
+
+.editFile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .userProfileForm {
@@ -17,17 +42,15 @@
   flex-direction: column;
   background: #19718d;
   border-radius: 70px;
+  width: 75%;
 }
 
 .EditUserForm-Container label {
-  font-style: normal;
-  color: #ffffff;
   display: block;
   margin-bottom: 0.5rem;
-  font-weight: bold;
 }
 
-.EditUserForm-Container input,
+/* .EditUserForm-Container input,
 .EditUserForm-Container textarea {
   box-sizing:border-box;
   padding: 0.5rem;
@@ -35,6 +58,39 @@
   border: 1px solid #ccc;
   border-radius: 0.25rem;
   width: 100%;
+  margin: 5px;
+} */
+
+.EditUserForm-Container #email {
+  align-items: center;
+  display: flex;
+  justify-content: space-around;
+
+}
+
+.userProfileForm .submit-button button {
+  background-color: 0077ff;
+  color: #fff;
+  border: none;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 75%;
+  margin: 15px;
+
+}
+
+.userProfileForm .submit-button,
+.userProfileForm .edit-profile-title{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.userProfileForm .list-button {
+  float: right;
+  box-sizing:border-box; 
   margin: 5px;
 }
 
