@@ -3,6 +3,7 @@ import JobPosting from "../components/JobPosting";
 import axios from "axios";
 import React from "react";
 import UserSession from "../UserSession";
+import { BrowserRouter } from "react-router-dom";
 
 jest.mock("axios");
 

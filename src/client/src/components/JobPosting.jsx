@@ -32,7 +32,7 @@ const JobPosting = () => {
       }
     };
 
-  if (userID && (userRole === "Recruiter" || userRole === 'Administrator')) {
+  
     return (
       <div className="Jobpostingform">
         <div className="title">
@@ -88,14 +88,7 @@ const JobPosting = () => {
         </button>
       </div>
     );
-  } else {
-    return (
-      <div className="Jobpostingform">
-        <h1 style={{ textAlign: "center" }}>You need to be a recruiter
-        or an administrator to post jobs!</h1>
-      </div>
-    );
-  }
+  
     
 };
 

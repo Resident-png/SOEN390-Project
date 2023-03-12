@@ -147,7 +147,7 @@ const EditUserProfile = () => {
 
   return (
     <div className="EditUserProfileContainer">
-      {userID && userData ? (
+      
         <form className="userProfileForm" onSubmit={submitEditProfile}>
           <h1 className="edit-profile-title">Edit your profile</h1>
           <div className="EditUserForm-Container">
@@ -273,9 +273,7 @@ const EditUserProfile = () => {
             <button type="submit">Save changes</button>
           </div>
         </form>
-      ) : (
-        <h1 style={{ textAlign: "center" }}>Please login to your account</h1>
-      )}
+
     </div>
   );
 };

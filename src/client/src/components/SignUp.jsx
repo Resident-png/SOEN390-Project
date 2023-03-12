@@ -152,7 +152,7 @@ function SignUp() {
                   </div>
                   <br></br>
                   <br></br>
-                  <button className="SignupButton">Sign Up</button>
+                  <button className="SignupButton" aria-label="signupbutton">Sign Up</button>
                   <br></br>
                   <br></br>
                 </form>

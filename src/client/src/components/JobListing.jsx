@@ -89,7 +89,7 @@ const JobListing = () =>{
             
         <div className="jobPosts_Container">
             
-            {userID ? (
+            
             
             <div data-testid = "jobPostsContainer" className="jobPosts">
                 <div className="heading">
@@ -150,15 +150,7 @@ const JobListing = () =>{
                     <button> Change</button>  
                     
             </div> */
-            ): (<div className = "notLoggedInContent">
-                <h1>Please login to your account!</h1> 
-                <p>It looks like you are not logged in.</p>
-                <Button onClick={navigateBackToSignIn} className ="redirectSignIn" variant="contained" component="label">
-                         <ArrowBack></ArrowBack> Back to Signin
-                </Button>
             
-            
-            </div>)}
         </div>
     );
 }

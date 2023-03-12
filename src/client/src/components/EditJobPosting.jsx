@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import { React, useState, useContext, useEffect } from "react";
 import "../css/editjobposting.css";
 import { Context } from "../UserSession";
 import Container from "react-bootstrap/Container";
@@ -79,7 +79,6 @@ function EditJobPosting() {
     });
   };
 
-  if (userID && (userRole === "Recruiter" || userRole === 'Administrator')) {
     return (
       //Edit posting page
       <Container id="editPostcontainer">
@@ -139,15 +138,6 @@ function EditJobPosting() {
         </Row>
       </Container>
     );
-  } else {
-    return (
-      <Container id="editPostcontainer">
-        <br />
-        <h1 style={{ textAlign: "center" }}>You need to be a recruiter
-        or an administrator to edit job postings!</h1>
-      </Container>
-    );
-  }
 }
 
 export default EditJobPosting;

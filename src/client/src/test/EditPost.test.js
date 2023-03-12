@@ -1,15 +1,25 @@
 /** @jest-environment jsdom */
 import React from "react";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import EditJobPosting from "../components/EditJobPosting";
+import UserSession from "../UserSession";
 import "@testing-library/jest-dom";
-import { BrowserRouter } from "react-router-dom";
+import { MemoryRouter } from "react-router-dom";
+
+beforeAll(() => {
+  sessionStorage.setItem("userID", "123456");
+  sessionStorage.setItem("firstname", "John");
+  sessionStorage.setItem("lastname", "Doe");
+  sessionStorage.setItem("role", "Recruiter");
+})
 
 test("page renders properly", () => {
   render(
-    <BrowserRouter>
-      <EditJobPosting />
-    </BrowserRouter>
+    <UserSession>
+      <MemoryRouter initialEntries={[{ pathname: '/jobs/563955' }]}>
+        <EditJobPosting />
+      </MemoryRouter>
+    </UserSession>
   );
   const heading = screen.getByRole("heading", { level: 3 });
   const title = screen.getByText(/Title/i);
@@ -21,4 +31,11 @@ test("page renders properly", () => {
   expect(description).toBeInTheDocument();
   expect(annualPay).toBeInTheDocument();
   expect(location).toBeInTheDocument();
+});
+
+afterAll(() => {
+  sessionStorage.removeItem("userID");
+  sessionStorage.removeItem("firstname");
+  sessionStorage.removeItem("lastname");
+  sessionStorage.removeItem("role");
 });

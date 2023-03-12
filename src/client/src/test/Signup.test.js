@@ -16,7 +16,7 @@ test("page renders properly", () => {
   // if there's a textbox which has an aria-label value set
   // to firstname.
   const textboxElement = screen.getByRole('textbox', {name: 'firstname'});
-  const buttonElement = screen.getByRole("button");
+  const buttonElement = screen.getByRole("button", {name: "signupbutton"});
   fireEvent.click(buttonElement);
   expect(textboxElement).toBeInTheDocument();
   expect(buttonElement).not.toBeDisabled();

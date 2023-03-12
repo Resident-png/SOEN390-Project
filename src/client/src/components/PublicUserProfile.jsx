@@ -107,7 +107,7 @@ const PublicUserProfile = () => {
 
   return (
     <div>
-      {userID && publicUser ? (
+      
         <div className="userProfileContainer">
           {/* User Information Component */}
           <div className="left">
@@ -252,9 +252,7 @@ const PublicUserProfile = () => {
             </div>
           </div>
         </div>
-      ) : (
-        <h1 style={{ textAlign: "center" }}>Please login to your account</h1>
-      )}
+
     </div>
   );
 };
