@@ -10,6 +10,7 @@ import SendIcon from "@mui/icons-material/Send";
 import NotificationsNoneIcon from "@mui/icons-material/NotificationsNone";
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import { useTranslation } from "react-i18next";
+import Notifications from "react-notifications-menu";
 
 const UserTimeline = () => {
   //Global state
@@ -28,7 +29,7 @@ const UserTimeline = () => {
     lastname: "",
     connections: [],
   });
-
+  const [preferences, setPreferences] = useState({});
   //http request to fetch user
   const fetchUserConnections = async () => {
     try {
@@ -200,6 +201,28 @@ const UserTimeline = () => {
     });
   };
 
+  ////////////////job_notifications
+
+  useEffect( () =>{
+    fetchUserPreferences();
+    fetchJobsWithFilter();
+}, []);
+
+
+const fetchUserPreferences = async () =>{
+  const user = await axios.get(`http://localhost:9000/users/${userID}`);
+
+  setPreferences(user.data.user.preferences)
+
+}
+const fetchJobsWithFilter = async () => {
+  const {data} = await axios.post('http://localhost:9000/jobs',preferences)
+  setJobs(data)
+  console.log(data)
+};
+const [jobs, setJobs] = useState([]);
+//array job_notif = [{message:jobs.name ,detailPage: jobs.job_id}]
+
   return (
     <div>
       {userID && login ? (
@@ -224,10 +247,24 @@ const UserTimeline = () => {
               {sessionStorage.getItem("lastname")}
             </span>
             <br></br>
-            <span className="userNameTimeline">
-              <IconButton>
-                <NotificationsNoneIcon></NotificationsNoneIcon>
-              </IconButton>
+            <span className="userTimelineContainer">
+              <Notifications
+                
+                headerBackgroundColor='light-blue'
+                data={[
+                  {
+                    image: "https://img1.pnghut.com/19/25/22/E6NEcY7Bbx/black-bag-travel-briefcase-suitcase.jpg",
+                    
+                    message: `${jobs[0]}`,
+                    detailPage: '/',
+                  },
+                ]}
+                header={{
+                  title: 'Notifications',
+                  option: { text: 'View All', onClick: () => console.log('Clicked') },
+                }}
+              />
+            
             </span>
           </div>
 
