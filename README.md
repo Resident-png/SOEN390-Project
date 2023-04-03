@@ -6,15 +6,7 @@ SOEN 390 team 05 winter 2023
 
 
 ## Team
-* Imran Ahmed 40172931
-* Joe El-Khoury 40173108
-* Hao Yi Liu 40174210
-* Titouan Sablé 40179062
-* Anna Hsu 40178711
-* Ali Alp Erdinc 40172910
-* Kunal Shah 40153500
-* Meet Vora 40155271
-* Rohan Das 40177213
+* Titouan Sablé and 8 other team members (names erased for privacy reasons)
 
 ## Objective
 To develop a LinkedIn-like app that allows users to connect with one another, search for and apply to Jobs.
